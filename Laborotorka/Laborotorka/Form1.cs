@@ -15,15 +15,18 @@ namespace Laborotorka
 		Rectangle Rectangle = new Rectangle(10, 10, 200, 100);
 		Rectangle Circle = new Rectangle(220, 10, 150, 150);
 		Rectangle Square = new Rectangle(380, 10, 150, 150);
+		Random RND = new Random();
+		Image tr, trb, si, sib, pl, plb, ro, rob, pt, ptb, st, stb;
 		bool RectangleClicked, CircleClicked, SquareClicked = false;
 		int RectangleX, RectangleY,CircleX, CircleY, SquareX, SquareY = 0;
+		
 
 
-		//int X, Y, dX, dY;
-		//int LastClicked = 0;
-	
+	//int X, Y, dX, dY;
+	//int LastClicked = 0;
 
-		private void PictureBox1_MouseMove(object sender, MouseEventArgs e)
+
+	private void PictureBox1_MouseMove(object sender, MouseEventArgs e)
 		{
 			bool aS = (label3.Location.X < Square.X + Square.Width) && (label3.Location.X > Square.X);
 			bool bS = (label3.Location.Y < Square.Y + Square.Height) && (label3.Location.Y > Square.Y);
@@ -197,6 +200,37 @@ namespace Laborotorka
 		public Form1()
 		{
 			InitializeComponent();
+			tr = Image.FromFile("C:/Users/opilane/source/repos/Laborotorka/Resources/Pealkirjata.png");
+			pictureBox1.Image = tr;
+			trb = Image.FromFile("C:/Users/opilane/source/repos/Laborotorka/Resources/6.png");
+			pictureBox1.Image = trb;
+			si = Image.FromFile("C:/Users/opilane/source/repos/Laborotorka/Resources/1.png");
+			pictureBox1.Image = si;
+			sib = Image.FromFile("C:/Users/opilane/source/repos/Laborotorka/Resources/7.png");
+			pictureBox1.Image = sib;
+			pl = Image.FromFile("C:/Users/opilane/source/repos/Laborotorka/Resources/2.png");
+			pictureBox1.Image = pl;
+			plb = Image.FromFile("C:/Users/opilane/source/repos/Laborotorka/Resources/8.png");
+			pictureBox1.Image = plb;
+			pt = Image.FromFile("C:/Users/opilane/source/repos/Laborotorka/Resources/4.png");
+			pictureBox1.Image = pt;
+			ptb = Image.FromFile("C:/Users/opilane/source/repos/Laborotorka/Resources/10.png");
+			pictureBox1.Image = ptb;
+			ro = Image.FromFile("C:/Users/opilane/source/repos/Laborotorka/Resources/3.png");
+			pictureBox1.Image = ro;
+			rob = Image.FromFile("C:/Users/opilane/source/repos/Laborotorka/Resources/9.png");
+			pictureBox1.Image = rob;
+			st = Image.FromFile("C:/Users/opilane/source/repos/Laborotorka/Resources/5.png");
+			pictureBox1.Image = st;
+			stb = Image.FromFile("C:/Users/opilane/source/repos/Laborotorka/Resources/11.png");
+			pictureBox1.Image = stb;
+
+			for (int i = 0; i < 3; i++)
+			{
+				int tmp = A[0];
+				A.RemoveAt(0);
+				A.Insert(RND.Next(6), tmp);
+			}
 		}
 
 		private void PictureBox1_Paint(object sender, PaintEventArgs e)
